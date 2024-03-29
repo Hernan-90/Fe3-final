@@ -1,0 +1,321 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.favButton{
+  background-color: #eaeaea;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+h1{
+  text-align: center;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.nav-logo {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 30px;
+  width: 30px;
+}
+
+a{
+  color: #000;
+  text-decoration: none;
+  margin: 5px;
+  cursor: pointer;
+}
+a:hover{
+  color: rgb(136, 136, 136);
+} 
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+  bottom: 0;
+  height: 40px;
+  margin-top: 2rem;
+}
+
+footer > img{
+  width: 200px;
+  margin: 0;
+}
+footer > p{
+  margin: 0;
+  padding-top: 0.7rem;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 350px;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.3);
+  transition: all .3s;
+}
+
+.card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.6);
+}
+
+.card-grid{
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+  width: 90vw;
+  height: auto;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 90%;
+  margin: 0 auto;
+  display: table;
+  border: 1px solid #ccc;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  text-align: center;
+  background-color: #eaeaea;
+}
+
+.dark th {
+  background-color: #c4d9ec;
+  color: #000;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.dark{
+  background-color: #2d2d30;
+  color: white;
+}
+.dark a {
+  color: white;
+}
+
+.dark .card {
+  background-color: #575759;
+}
+
+.dark .favButton {
+  background-color: #c4d9ec;
+}
+
+.app {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.contact {
+  margin: 0 auto;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section {
+  margin-bottom: auto;
+}
+
+.btn-theme {
+  height: 40px;
+  width: 40px;
+  background-color: #eaeaea;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-theme * {
+  transition: all .3s;
+}
+
+.btn-visible {
+  padding: 20px 20px;
+}
+
+.btn-theme:hover .btn-visible {
+  transform: translateX(-100%);
+}
+
+.btn-invisible {
+  position: absolute;
+  padding: 20px 0;
+  left: 100px;
+}
+
+.btn-theme:hover .btn-invisible {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+img {
+  width: 100%;
+}
+
+.dentist-details {
+  margin-bottom: 20px;
+}
+
+.detail {
+  margin: 0;
+}
+
+.detail:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.contact-title {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.contact-subtitle {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.form-container {
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.3);
+  padding: 20px;
+}
+
+.form-items, .form-textarea {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px; 
+}
+
+.form-items {
+  position: relative;
+  height: 40px;
+  justify-content: end;
+}
+
+.form-label {
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 5px;
+  transition: all .2s;
+}
+
+.form-items .form-label {
+  position: absolute;
+}
+
+.form-input {
+  height: 20px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  transition: all .2s;
+}
+
+.form-input::placeholder {
+  color: transparent;
+}
+
+.form-input:focus {
+  outline: none;
+  border-bottom: 1px solid #000;
+}
+
+.form-input:focus + .form-label, .form-input:not(:placeholder-shown) + .form-label {
+  transform: translateY(-18px);
+}
+
+.form-textarea textarea {
+  outline: none;
+}
+
+.form-validations {
+  margin-bottom: 30px;
+}
+
+.validation {
+  color: #c54034;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.dark .form-container {
+  background-color: #575759;
+}
+
+.dark .form-input {
+  background-color: #575759;
+  color: #fff;
+}
+
+.dark .form-input:focus {
+  outline: none;
+  border-bottom: 1px solid #fff;
+}
+
+.dark .validation {
+  color: #3abcfb;
+}
