@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className='nav-logo'>
-        <img src="/assets/images/DH.ico" alt="Digital House logo" className="logo"/>
+        <img src="./images/DH.ico" alt="Digital House logo" className="logo"/>
         <span>DH Odontología</span>
       </div>
 

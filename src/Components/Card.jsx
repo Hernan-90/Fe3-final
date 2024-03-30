@@ -5,12 +5,18 @@ import { ContextGlobal } from "./utils/global.context";
 
 const Card = ({ name, username, id, email, website, phone }) => {
 
-  const { dispatch } = useContext( ContextGlobal )
+  const { state, dispatch } = useContext( ContextGlobal )
+
+  const deleteAndRefresh = (id) => {
+    dispatch({ type: 'DELETE_FAV', payload: id });
+    const updatedFavs = state.favs.filter( odontologo => odontologo.id !== id);
+    localStorage.setItem('favs', JSON.stringify(updatedFavs));
+  };
 
   return (
     <div className="card">
       <Link to={`/odontologo/${ id }`}>
-        <img src="/assets/images/doctor.jpg" alt="" />
+        <img src="./images/doctor.jpg" alt="Imagen de odontologo" />
 
         <h3> { name } </h3>
         <div className="dentist-details">
@@ -22,7 +28,7 @@ const Card = ({ name, username, id, email, website, phone }) => {
       {
         location.pathname === '/' 
         ? <button onClick={ () => dispatch({ type: 'ADD_FAV', payload: { id, name, username } }) } className="favButton">Add fav</button>
-        : <button onClick={ () => { dispatch({ type: 'DELETE_FAV', payload: id }), location.reload() } } className="favButton">Remove fav</button>
+        : <button onClick={ () => deleteAndRefresh( id ) } className="favButton">Remove fav</button>
       }
     </div>
   );

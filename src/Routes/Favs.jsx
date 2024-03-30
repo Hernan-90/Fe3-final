@@ -9,7 +9,9 @@ const Favs = () => {
       <h1>Dentists Favs</h1>
       <div className="card-grid">
         {
-          favoritos.map( fav => ( <Card key={fav.id} { ...fav }/> ) )
+          favoritos.length === 0 ?
+          <p>No hay ningún odontologo guardado en favoritos</p>
+          : favoritos.map( fav => ( <Card key={fav.id} { ...fav }/> ) )
         }
       </div>
     </div>

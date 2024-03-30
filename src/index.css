@@ -20,6 +20,7 @@ code {
   width: 100%;
   cursor: pointer;
   text-transform: uppercase;
+  transition: all .2s;
 }
 
 h1{
@@ -94,9 +95,9 @@ form{
   transition: all .3s;
 }
 
-.card:hover{
+.favButton:hover{
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.6);
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.3);
 }
 
 .card-grid{
@@ -187,6 +188,10 @@ tr:nth-child(even) {
   justify-content: center;
 }
 
+.dark .btn-theme {
+  background-color: #c4d9ec;
+}
+
 .btn-theme * {
   transition: all .3s;
 }
@@ -266,6 +271,7 @@ img {
 
 .form-items .form-label {
   position: absolute;
+  z-index: 1;
 }
 
 .form-input {
@@ -273,6 +279,9 @@ img {
   border: none;
   border-bottom: 1px solid #ccc;
   transition: all .2s;
+  background-color: transparent;
+  position: relative;
+  z-index: 2;
 }
 
 .form-input::placeholder {
@@ -307,7 +316,6 @@ img {
 }
 
 .dark .form-input {
-  background-color: #575759;
   color: #fff;
 }
 
