@@ -7,10 +7,16 @@ const Card = ({ name, username, id, email, website, phone }) => {
 
   const { state, dispatch } = useContext( ContextGlobal )
 
+  const addToFavorites = ( id, name, username ) => {
+    dispatch({ type: 'ADD_FAV', payload: { id, name, username } })
+    alert(`Se agrego correctamente al odontólogo ${ name } a favoritos.`)
+  }
+
   const deleteAndRefresh = (id) => {
     dispatch({ type: 'DELETE_FAV', payload: id });
     const updatedFavs = state.favs.filter( odontologo => odontologo.id !== id);
     localStorage.setItem('favs', JSON.stringify(updatedFavs));
+    alert(`Se elimino a ${ name } de favoritos.`)
   };
 
   return (
@@ -18,16 +24,15 @@ const Card = ({ name, username, id, email, website, phone }) => {
       <Link to={`/odontologo/${ id }`}>
         <img src="./images/doctor.jpg" alt="Imagen de odontologo" />
 
-        <h3> { name } </h3>
+        <h3 className="card-name"> { name } </h3>
         <div className="dentist-details">
-          <p className="detail"> { phone } </p>
-          <p className="detail"> { email } </p>
+          <p className="detail"> { username } </p>
         </div>
       </Link>
 
       {
         location.pathname === '/' 
-        ? <button onClick={ () => dispatch({ type: 'ADD_FAV', payload: { id, name, username } }) } className="favButton">Add fav</button>
+        ? <button onClick={ () => addToFavorites( id, name, username ) } className="favButton">Add fav</button>
         : <button onClick={ () => deleteAndRefresh( id ) } className="favButton">Remove fav</button>
       }
     </div>

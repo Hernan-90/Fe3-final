@@ -219,11 +219,16 @@ img {
   width: 100%;
 }
 
+.card-name {
+  text-align: center;
+}
+
 .dentist-details {
   margin-bottom: 20px;
 }
 
 .detail {
+  text-align: center;
   margin: 0;
 }
 
